@@ -1,0 +1,6 @@
+<label> Name: </label>
+<h2> <%= @student.name %> </h2>
+<label> Age: </label>
+<h2> <%= @student.age %> </h2>
+<label> Instructor: </label>
+<h3> <%= link_to @student.instructor.name, "/instructors/#{@student.instructor.id}" %> </h3>

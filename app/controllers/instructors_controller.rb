@@ -4,4 +4,8 @@ class InstructorsController < ApplicationController
     @instructors = Instructor.all
   end
 
+  def show 
+    @instructor = Instructor.all.find(params[:id])
+  end 
+
 end

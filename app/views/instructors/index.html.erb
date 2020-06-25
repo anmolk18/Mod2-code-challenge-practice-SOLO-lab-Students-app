@@ -2,6 +2,6 @@
 
 <ul>
   <% @instructors.each do |instructor| %>
-    <li><%= instructor.name %></li>
+  <li><%= link_to instructor.name, "/instructors/#{instructor.id}" %></li>
   <% end %>
 </ul>

@@ -1,0 +1,16 @@
+<label> Instructor: </label>
+<h2> <%= @instructor.name %> </h2>
+
+<label> Instructor's Students: </label>
+<ul>
+    <% @sorted = @instructor.students.sort_by {|student| student.name }%>
+    <% @sorted.each do |student|  %>
+    <li>
+        <%= link_to student.name, student_path(student) %>
+    </li>
+    <% end %>
+</ul>
+
+<label> Average Age of Students: </label>
+<% arr = @instructor.students.map {|student| student.age} %>
+<%= arr.sum / arr.size %> 

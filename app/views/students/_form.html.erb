@@ -1,0 +1,25 @@
+<% if flash[:errors] %>
+    <ul>
+    <% flash[:errors].each do |error| %>
+        <li style="color: red">
+            <%= error %>
+        </li>
+    <% end %>
+    </ul>
+<% end %>
+
+<%=form_for @student do |f|%>
+    <%=f.label :name %>
+    <%=f.text_field :name %> <br/>
+
+    <%=f.label :major %> 
+    <%= f.text_field :major %> <br/> 
+
+    <%=f.label :instructor %>
+    <%=f.collection_select :instructor_id, Instructor.all, :id, :name %>  <br/>
+
+    <%=f.label :age %>
+    <%=f.number_field :age %> <br/>
+
+    <%=f.submit%>
+<%end%> 
